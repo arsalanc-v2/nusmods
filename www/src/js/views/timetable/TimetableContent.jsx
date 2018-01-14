@@ -130,9 +130,7 @@ class TimetableContent extends Component<Props, State> {
     // $FlowFixMe When object spread type actually works
     if (lesson.isAvailable) {
       this.props.changeLesson(this.props.semester, lesson);
-    } else if (lesson.isActive) {
-      this.props.cancelModifyLesson();
-    } else {
+    } else if (!lesson.isActive) {
       this.props.modifyLesson(lesson);
     }
   };
